@@ -22,13 +22,14 @@ The ```unsupervised``` folder has 4 machine learning algorithms:
 1. k-means Clustering
 2. DBSCAN (Density Based Clustering)
 3. Principal Components Analysis
-4. Label Propagation for Graphs
+4. SVD Decomposition for Image Compression
+5. Label Propagation for Graphs
 
 
 ## Installation
 
 
-Within a Jupyter Notebook, import in the specific Machine Learning Model. For example, if you wanted to import Decision Trees, which is in the ```supervised``` folder, you could use:
+Within a Jupyter Notebook, import in the specific Machine Learning Model at the top. For example, if you wanted to use Decision Trees, which is in the ```supervised``` folder, you could include the line:
 
 ```from my_ml_package.supervised.decision_trees import DecisionTreeRegressor```
 
