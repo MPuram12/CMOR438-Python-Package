@@ -29,12 +29,14 @@ The ```unsupervised``` folder has 5 machine learning algorithms:
 6. Maximum Clique for Graphs
 
 
-## Installation
+## Instructions for Use
 
 
 Within a Jupyter Notebook, import in the specific Machine Learning Model at the top. For example, if you wanted to use Decision Trees, which is in the ```supervised``` folder, you could include the line:
 
 ```from my_ml_package.supervised.decision_trees import DecisionTreeRegressor```
+
+If you want to see each model in action applied to a very simple example, you can exeucte each ```.py``` file directly. 
 
 
 
