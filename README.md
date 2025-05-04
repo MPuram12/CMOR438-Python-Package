@@ -1,5 +1,7 @@
 # CMOR438-Python-Package
 
+Authors: Mani Puram, Jonathan Cheng, Kenneth Soh
+
 # My Machine Learning Algorithms Package (e.g., ml_algorithms)
 
 This Python package implements various machine learning algorithms, organized into supervised and unsupervised learning categories.
