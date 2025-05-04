@@ -4,15 +4,21 @@ import networkx as nx
 import matplotlib.patches as mpatches
 
 class LabelPropagationGraph:
+     """
+    Label Propagation Graph
+
+    Attributes:
+        edge_data (np array): numpy array of shape (n_edges, 2) with each row containing the vertices connected by an edge
+        directed (Boolean): true or false depending on whether the graph is directed or not
+    """
     def __init__(self, edge_data, directed):
         """
-        Initializes the graph with given edge data and directed (boolean for whether graph is directed or not)
-        edge_data: numpy array of shape (n_edges, 2), where each row is an edge between two vertices.
+        Initializes the graph with given edge data and directed, 
         """
         self.edge_data = edge_data
         self.adj_matrix = self.build_adj(edge_data)
-        self.labels = None
-        self.iterations = 0
+        self.labels = None # Labels of each vertex
+        self.iterations = 0 # Keeps track of number of iterations used
         self.directed = directed
 
     def build_adj(self, data):
