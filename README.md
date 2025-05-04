@@ -1,6 +1,6 @@
 # CMOR438-Python-Package
 
-Authors: Mani Puram, Jonathan Cheng, Kenneth Soh
+Authors: Mani Puram (mp108), Jonathan Cheng (jc212), Kenneth Soh (ks185)
 
 # My Machine Learning Algorithms Package (e.g., ml_algorithms)
 
