@@ -39,5 +39,10 @@ Within a Jupyter Notebook, import in the specific machine learning model at the 
 If you want to see each model in action applied to a very simple example, you can exeucte each ```.py``` file directly. 
 
 
+## Mani's Notebooks
+
+Mani's application of these machine learning models to specific data sets is in the ```notebooks``` folder. 
+
+
 
 
