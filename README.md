@@ -20,7 +20,7 @@ The ```supervised``` folder has 8 machine learning algorithms:
 7. Random Forests
 8. Boosting
 
-The ```unsupervised``` folder has 4 machine learning algorithms:
+The ```unsupervised``` folder has 5 machine learning algorithms:
 1. k-means Clustering
 2. DBSCAN (Density Based Clustering)
 3. Principal Components Analysis
