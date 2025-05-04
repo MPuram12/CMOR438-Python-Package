@@ -56,3 +56,14 @@ class MaxCliqueFinder:
         clique_vertices = np.where(np.abs(result.x + f) < 1e-3)[0].tolist()
 
         return clique_vertices
+
+    if __name__ == '__main__':
+        edges = np.array([
+        [0, 1],
+        [1, 2],
+        [2, 0],
+        [0, 3]])
+
+        finder = MaxCliqueFinder(edges)
+        max_clique = finder.find_max_clique()
+        print("Maximum Clique:", max_clique)
