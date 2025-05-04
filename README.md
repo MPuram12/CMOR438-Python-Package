@@ -26,6 +26,7 @@ The ```unsupervised``` folder has 4 machine learning algorithms:
 3. Principal Components Analysis
 4. SVD Decomposition for Image Compression
 5. Label Propagation for Graphs
+6. Maximum Clique for Graphs
 
 
 ## Installation
