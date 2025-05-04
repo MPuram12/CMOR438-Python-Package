@@ -2,7 +2,7 @@
 
 Authors: Mani Puram (mp108), Jonathan Cheng (jc212), Kenneth Soh (ks185)
 
-# My Machine Learning Algorithms Package (e.g., ml_algorithms)
+# My Machine Learning Algorithms Package (```my_ml_package```)
 
 This Python package implements various machine learning algorithms, organized into supervised and unsupervised learning categories.
 
@@ -32,7 +32,7 @@ The ```unsupervised``` folder has 5 machine learning algorithms:
 ## Instructions for Use
 
 
-Within a Jupyter Notebook, import in the specific Machine Learning Model at the top. For example, if you wanted to use Decision Trees, which is in the ```supervised``` folder, you could include the line:
+Within a Jupyter Notebook, import in the specific machine learning model at the top. For example, if you wanted to use Decision Trees, which is in the ```supervised``` folder, you could include the line:
 
 ```from my_ml_package.supervised.decision_trees import DecisionTreeRegressor```
 
