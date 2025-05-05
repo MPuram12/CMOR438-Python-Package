@@ -63,7 +63,7 @@ class KNearestNeighbors:
         # Get the labels of the k nearest neighbors
         k_nearest_labels = [self.y_train[i] for i in k_indices]
 
-        # Determine the most common label among the k neighbors
+        # Determine most common label among the k neighbors
         most_common = Counter(k_nearest_labels).most_common(1)
         return most_common[0][0]  # Return the label
 

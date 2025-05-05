@@ -98,6 +98,6 @@ if __name__ == '__main__':
     predictions = boosting.predict(X_test)
     print("Predictions:", predictions)
 
-    # Evaluate performance using R^2 score
+    # Evaluate performance using R^2
     r_squared = boosting.score(X_test, np.array([3, 4, 8]))
     print(f"R^2: {r_squared:.2f}")

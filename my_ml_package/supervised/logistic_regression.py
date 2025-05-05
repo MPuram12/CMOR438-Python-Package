@@ -45,7 +45,7 @@ class LogisticRegressionNeuron:
             linear_output = np.dot(X, self.weights) + self.bias
             y_predicted = self._sigmoid(linear_output)
 
-            # Calculate the error
+            # Calculate the prediction error
             error = y_predicted - y
 
             # Calculate gradients
@@ -67,8 +67,11 @@ class LogisticRegressionNeuron:
         Returns:
             ndarray: The predicted class labels, shape (n_samples,).
         """
+        # Compute probability scores using sigmoid
         linear_output = np.dot(X, self.weights) + self.bias
         y_predicted_proba = self._sigmoid(linear_output)
+
+        # Convert probabilities to class labels
         y_predicted = np.where(y_predicted_proba >= threshold, 1, 0)
         return y_predicted
     

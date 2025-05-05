@@ -32,18 +32,20 @@ class LinearRegressionNeuron: # Changed class name here
             y (ndarray): The target values, shape (n_samples,).
         """
         n_samples, n_features = X.shape
-        self.weights = np.zeros(n_features)  # Initialize weights to zeros
-        self.bias = 0  # Initialize bias to zero
 
-        # Gradient Descent
+        # Initialize weights and bias to zeros
+        self.weights = np.zeros(n_features)
+        self.bias = 0
+
+        # Run gradient descent for the specified number of iterations
         for _ in range(self.n_iters):
             # Calculate predictions
             y_predicted = np.dot(X, self.weights) + self.bias
 
-            # Calculate the error
+            # Calculate the prediction error
             error = y_predicted - y
 
-            # Calculate gradients
+            # Calculate gradients of loss with respect to weights and bias
             dw = (1 / n_samples) * np.dot(X.T, error)  # Gradient of weights
             db = (1 / n_samples) * np.sum(error)      # Gradient of bias
 

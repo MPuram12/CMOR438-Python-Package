@@ -68,14 +68,14 @@ class DecisionTreeRegressor:
         if n_features == 0:
             return {'value': np.mean(y)}
 
-        # Find the best split
+        # Try to find the best possible feature and threshold to split on
         best_split = self._get_best_split(X, y)
 
         # If no good split is found, return the mean of the target values
         if best_split['feature_index'] is None:
             return {'value': np.mean(y)}
 
-        # Recursively build the left and right subtrees
+        # Split data and recursively build left and right subtrees
         left_X, left_y = best_split['left_X'], best_split['left_y']
         right_X, right_y = best_split['right_X'], best_split['right_y']
 
@@ -197,6 +197,6 @@ if __name__ == '__main__':
     predictions = dt.predict(X_test)
     print("Predictions:", predictions)
 
-    # Evaluate
+    # Evaluate with R^2
     r_squared = dt.score(X_test, np.array([3,4]))
     print(f"R^2: {r_squared:.2f}")
