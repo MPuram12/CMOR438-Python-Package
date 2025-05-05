@@ -22,8 +22,8 @@ class KMeans:
         self.n_clusters = n_clusters
         self.max_iters = max_iters
         self.random_state = random_state
-        self.centroids = None
-        self.labels = None
+        self.centroids = None # Centroid positions will be learned
+        self.labels = None # Centroid positions will be learned
 
     def fit(self, X):
         """

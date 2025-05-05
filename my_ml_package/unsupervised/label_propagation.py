@@ -39,6 +39,7 @@ class LabelPropagationGraph:
         Runs the label propagation algorithm on the graph.
         """
         n = len(self.adj_matrix)
+        # Initialize each node with label
         self.labels = np.arange(n)
         self.iterations = 0
 
@@ -51,10 +52,12 @@ class LabelPropagationGraph:
                     continue
                 # Finding most common label amongst neighbors
                 neighbor_labels = self.labels[neighbors]
+
+                # Count how often each label appears
                 unique_labels, counts = np.unique(neighbor_labels, return_counts=True)
                 max_labels = unique_labels[counts == counts.max()]
 
-                # Breaking ties randomly
+                # Choose between ties randomly
                 chosen_label = np.random.choice(max_labels)
 
                 if self.labels[i] != chosen_label:
