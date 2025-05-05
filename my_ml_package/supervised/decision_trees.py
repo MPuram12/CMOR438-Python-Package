@@ -72,6 +72,7 @@ class DecisionTreeRegressor:
         best_split = self._get_best_split(X, y)
 
         # If no good split is found, return the mean of the target values
+        # Insert comment here
         if best_split['feature_index'] is None:
             return {'value': np.mean(y)}
 
