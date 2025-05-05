@@ -22,7 +22,7 @@ class BoostingRegressor:
         self.n_estimators = n_estimators
         self.learning_rate = learning_rate
         self.max_depth = max_depth
-        self.trees = []
+        self.trees = [] # Will store all trained trees (plus initial prediction)
         self.initial_prediction = None  # Store the initial prediction
 
     def fit(self, X, y):
@@ -34,13 +34,15 @@ class BoostingRegressor:
             y (ndarray): The target values, shape (n_samples,).
         """
         n_samples = X.shape[0]
+
+        # Start by predicting the mean of y — this is our baseline model
         self.initial_prediction = np.mean(y)  # Initialize prediction with the mean of the target
         self.trees.append(self.initial_prediction) #store the initial prediction as the first element in the trees list
 
-        # Initialize the residuals
+        # Calculate residuals from initial prediction
         residuals = y - self.initial_prediction
 
-        # Build each tree
+        # Iteratively fit trees to the residuals
         for _ in range(self.n_estimators):
             # 1. Fit a decision tree to the residuals
             tree = DecisionTreeRegressor(max_depth=self.max_depth)
@@ -49,7 +51,7 @@ class BoostingRegressor:
 
             # 2. Update the predictions (in place)
             new_predictions = tree.predict(X)
-            residuals = residuals - self.learning_rate * new_predictions
+            residuals = residuals - self.learning_rate * new_predictions # Update residuals for the next iteration
 
     def predict(self, X):
         """
@@ -62,7 +64,7 @@ class BoostingRegressor:
             ndarray: The predicted values, shape (n_samples,).
         """
         predictions = np.full(X.shape[0], self.initial_prediction)  # Initialize with the initial prediction
-        for tree in self.trees[1:]: #iterate from the second tree onwards
+        for tree in self.trees[1:]: # Skip the first element (the initial constant)
             predictions += self.learning_rate * tree.predict(X)  # Add the weighted predictions of each tree
         return predictions
 
@@ -96,6 +98,6 @@ if __name__ == '__main__':
     predictions = boosting.predict(X_test)
     print("Predictions:", predictions)
 
-    # Evaluate
+    # Evaluate performance using R^2 score
     r_squared = boosting.score(X_test, np.array([3, 4, 8]))
     print(f"R^2: {r_squared:.2f}")
