@@ -24,6 +24,12 @@ class LabelPropagationGraph:
     def build_adj(self, data):
         """
         Builds the adjacency matrix from edge data for a graph.
+
+        Given a data matrix that contains the edges, build the adjacency matrix for a graph.
+
+        Args:
+            data: (n_edges, 2) dimensional np array that contains the edge data
+            directed: Boolean for whether or not the graph is directed
         """
         vertices = np.max(data)
         adj = np.zeros((vertices + 1, vertices + 1))
@@ -37,6 +43,9 @@ class LabelPropagationGraph:
     def run_label_propagation(self, max_iter=100):
         """
         Runs the label propagation algorithm on the graph.
+
+        Args:
+             max_iter: the max number of iterations the algorithm runs for before converging 
         """
         n = len(self.adj_matrix)
         # Initialize each node with label
