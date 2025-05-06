@@ -10,10 +10,10 @@ class MaxCliqueFinder:
         Initialize the class with edge data and build the adjacency matrix.
         '''
         self.edge_data = edge_data
-        self.adj = self._build_adj(edge_data)
+        self.adj = self.build_adj(edge_data)
         self.directed = directed # whether graph is directed or not
 
-    def _build_adj(self, data, directed):
+    def build_adj(self, data, directed):
         '''
         Given a data matrix that contains the edges, build the adjacency matrix for a graph.
 
