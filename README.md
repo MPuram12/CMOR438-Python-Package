@@ -32,7 +32,7 @@ The ```unsupervised``` folder has 5 machine learning algorithms:
 ## Instructions for Use
 
 
-Within a Jupyter Notebook, import in the specific machine learning model at the top. For example, if you wanted to use Decision Trees, which is in the ```supervised``` folder, you could include the line:
+First make sure that ```my_ml_package``` is downloaded in the same folder as your Jupyter Notebooks. Then, within a Jupyter Notebook, import in the specific machine learning model at the top. For example, if you wanted to use Decision Trees, which is in the ```supervised``` folder, you could include the line:
 
 ```from my_ml_package.supervised.decision_trees import DecisionTreeRegressor```
 
