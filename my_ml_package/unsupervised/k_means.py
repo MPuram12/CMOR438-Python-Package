@@ -1,5 +1,5 @@
 import numpy as np
-
+from sklearn.metrics import silhouette_score
 
 class KMeans:
     """
@@ -144,7 +144,6 @@ class KMeans:
         Returns:
             float: Silhouette Coefficient. Returns None if number of clusters is 1.
         """
-        from sklearn.metrics import silhouette_score
 
         if self.n_clusters <= 1:
             return None  # Silhouette score is not defined for a single cluster

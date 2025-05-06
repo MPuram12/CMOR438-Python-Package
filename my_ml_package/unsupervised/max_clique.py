@@ -10,10 +10,11 @@ class MaxCliqueFinder:
         Initialize the class with edge data and build the adjacency matrix.
         '''
         self.edge_data = edge_data
-        self.adj = self.build_adj(edge_data)
         self.directed = directed # whether graph is directed or not
+        self.adj = self.build_adj(edge_data)
+        
 
-    def build_adj(self, data, directed):
+    def build_adj(self, data):
         '''
         Given a data matrix that contains the edges, build the adjacency matrix for a graph.
 
@@ -28,7 +29,7 @@ class MaxCliqueFinder:
         for i in range(len(data)):
             u, v = int(data[i, 0]), int(data[i, 1]) # Getting each entry of data matrix
             adj[u, v] = 1
-            if self.directed = False: # Add the other direction if graph is undirected
+            if self.directed is False: # Add the other direction if graph is undirected
               adj[v, u] = 1
         return adj
 
@@ -63,13 +64,14 @@ class MaxCliqueFinder:
 
         return clique_vertices
 
-    if __name__ == '__main__':
-        edges = np.array([
-        [0, 1],
-        [1, 2],
-        [2, 0],
-        [0, 3]])
+if __name__ == '__main__':
+    # Creating simple test case
+    edges = np.array([
+    [0, 1],
+    [1, 2],
+    [2, 0],
+    [0, 3]])
 
-        finder = MaxCliqueFinder(edges)
-        max_clique = finder.find_max_clique()
-        print("Maximum Clique:", max_clique)
+    finder = MaxCliqueFinder(edges, directed = False)
+    max_clique = finder.find_max_clique()
+    print(f"Maximum Clique: {max_clique}")
