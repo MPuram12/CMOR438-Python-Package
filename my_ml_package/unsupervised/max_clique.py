@@ -16,13 +16,19 @@ class MaxCliqueFinder:
     def _build_adj(self, data, directed):
         '''
         Given a data matrix that contains the edges, build the adjacency matrix for a graph.
+
+        Args:
+            data: (n_edges, 2) dimensional np array that contains the edge data
+            directed: Boolean for whether or not the graph is directed
+        """
         '''
         vertices = int(np.max(data))
+        # Initialize adjacency matrix
         adj = np.zeros((vertices + 1, vertices + 1))
         for i in range(len(data)):
-            u, v = int(data[i, 0]), int(data[i, 1])
+            u, v = int(data[i, 0]), int(data[i, 1]) # Getting each entry of data matrix
             adj[u, v] = 1
-            if self.directed = False:
+            if self.directed = False: # Add the other direction if graph is undirected
               adj[v, u] = 1
         return adj
 
